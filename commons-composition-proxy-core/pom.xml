@@ -5,15 +5,13 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.whirlwin</groupId>
-    <artifactId>commons-composition-proxy</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <parent>
+        <artifactId>commons-composition-proxy</artifactId>
+        <groupId>org.whirlwin</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
 
-    <modules>
-        <module>commons-composition-proxy-core</module>
-        <module>commons-composition-proxy-spring</module>
-    </modules>
+    <artifactId>commons-composition-proxy-core</artifactId>
 
 
 </project>
