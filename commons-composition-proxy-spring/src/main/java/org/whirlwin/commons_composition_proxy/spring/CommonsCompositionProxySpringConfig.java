@@ -1,6 +1,8 @@
 package org.whirlwin.commons_composition_proxy.spring;
 
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -17,5 +19,10 @@ public class CommonsCompositionProxySpringConfig extends WebMvcConfigurerAdapter
     public void addInterceptors(final InterceptorRegistry registry) {
         registry.addInterceptor(compositionProxyEndpointProcessor).addPathPatterns("/**");
         super.addInterceptors(registry);
+    }
+
+    @Bean
+    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
+        return new DefaultAdvisorAutoProxyCreator();
     }
 }
